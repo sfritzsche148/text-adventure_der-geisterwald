@@ -4,69 +4,44 @@ function Story() {
     
 
 
-
+    // inside hütte
     if (story === 'Umschauen') {
-        story =  prompt('Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Möchtest du die Angelrute aufnehmen? Mögliche Befehle: - Ja, - Nein, - durch die Tür gehen, Untersuchen');
+        story =  prompt('Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Du hast jetzt eine Angelrute in deinem Inventar. Mögliche Befehle:  - durch die Tür gehen, Untersuchen');
 
-        if (story === "Ja") {
-            story = prompt('Du hast die Angelrute aufgenommen. Sie ist nun in deinem Inventar. Mögliche Befehle: - durch die Tür gehen, Untersuchen');
-            
-            if (story === 'Untersuchen') {
-                story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm willst du ihn aufnehmen? Mögliche Befehle: - Ja, - Nein');
-            
-            if (story === "Ja") {
-                story = prompt('Du hast ihn aufgenommen. Er ist jetzt in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
-            } else if (story === 'Nein') {
-                story = prompt('Du hast ihn liegen lassen. Mögliche Befehle: - durch die Tür gehen')
-            }
-            }
-
-        }else if (story === 'Nein') {
-            story = prompt('Du hast die Angelrute liegen lassen. Mögliche Befehle: - durch die Tür gehen, - Untersuchen')
-            if (story === 'Untersuchen') {
-                story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm willst du ihn aufnehmen? Mögliche Befehle: - Ja, - Nein');
-            
-            if (story === "Ja") {
-                story = prompt('Du hast ihn aufgenommen. Er ist jetzt in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
-            } else if (story === 'Nein') {
-                story = prompt('Du hast ihn liegen lassen. Mögliche Befehle: - durch die Tür gehen')
-            }
-            }
-
-        }else if (story === 'Untersuchen') {
-            story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm willst du ihn aufnehmen? Mögliche Befehle: - Ja, - Nein');
-
-            if (story === "Ja") {
-                story = prompt('Du hast ihn aufgenommen. Er ist jetzt in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
-            } else if (story === 'Nein') {
-                story = prompt('Du hast ihn liegen lassen. Mögliche Befehle: - durch die Tür gehen')
-            }
+        if (story === "Untersuchen") {
+            story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm. Du hast ein Wurm in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
         }
+    
 
 
 
-    } else if (story === 'Untersuchen') {
-        story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm willst du ihn aufnehmen? Mögliche Befehle: - Ja, - Nein');
+    }else if (story === 'Untersuchen') {
+        story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm. Du hast ein Wurm in deinem Inventar. Mögliche Befehle: - Umschauen, - durch die Tür gehen');
          
-        if (story === "Ja") {
-            story = prompt('Du hast ihn aufgenommen. Er ist jetzt in deinem Inventar. Mögliche Befehle: - durch die Tür gehen, - Umschauen');
-        } else if (story === 'Nein') {
-            story = prompt('Du hast ihn liegen lassen. Mögliche Befehle: - durch die Tür gehen, - Umschauen')
-        }
 
-        if (story === "Umschauen") {
-            story = prompt('Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Möchtest du die Angelrute aufnehmen? Mögliche Befehle: - Ja, - Nein, - durch die Tür gehen');
-
-            if (story === "Ja") {
-                story = prompt('Du hast die Angelrute aufgenommen. Sie ist nun in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
-            } else if (story === 'Nein') {
-                story = prompt('Du hast die Angelrute liegen lassen. Mögliche Befehle: - durch die Tür gehen')
-            }
+        if (story === 'Umschauen') {
+            story = prompt('Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Du hast jetzt eine Angelrute in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
         }
 
     }
 
-    story = prompt('Du stehst vor der Tür')
+    // infront of 
+    story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Untersuchen, - Nach links gehen, - Nach rechts gehen');
+
+    if (story === 'Untersuchen') {
+        prompt('Untersuchen');
+
+    }else if (story === 'Nach links gehen') {
+        story = prompt('Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Wurm mit Angel kombinieren und Angeln, - Fluss überqueren, - Zurück zur Hütte gehen');
+
+        if (story === 'Wurm mit Angel kombinieren und Angeln') {
+            story = prompt('')
+        }
+
+    }
+
+
+    story = prompt('Du siehst den Wald.')
 }
 
 Story();
