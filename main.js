@@ -29,19 +29,39 @@ function Story() {
     story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Untersuchen, - Nach links gehen, - Nach rechts gehen');
 
     if (story === 'Untersuchen') {
-        prompt('Untersuchen');
+        story = prompt('Der Rosenbusch trägt frische, gut duftende Rosen. Du plückst eine Rose von dem Busch. Du hast jetzt eine Rose in deinem Inventar. Mögliche Befehle: - Nach links gehen, - Nach rechts gehen');
 
-    }else if (story === 'Nach links gehen') {
-        story = prompt('Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Wurm mit Angel kombinieren und Angeln, - Fluss überqueren, - Zurück zur Hütte gehen');
+        if (story === 'Nach links gehen') {
+            story = prompt('Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Wurm mit Angel kombinieren und Angeln,');
+            if (story === 'Wurm mit Angel kombinieren und Angeln') {
+                story = prompt('Du hast einen Fisch gefangen. Du bist aber so hungrig das du ihn ist, doch der Fisch ist vergiftet und das Gift tötet dich. Mögliche Befehle: - Zurück gehen');
+    
+                if (story === 'Zurück gehen') {
+                    story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Nach rechts gehen');
 
-        if (story === 'Wurm mit Angel kombinieren und Angeln') {
-            story = prompt('')
+                }
+            }
         }
 
-    }
+    }else if (story === 'Nach links gehen') {
+        story = prompt('Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Wurm mit Angel kombinieren und Angeln,');
+
+        if (story === 'Wurm mit Angel kombinieren und Angeln') {
+            story = prompt('Du hast einen Fisch gefangen. Du bist aber so hungrig das du ihn ist, doch der Fisch ist vergiftet und das Gift tötet dich. Mögliche Befehle: - Zurück gehen');
+
+            if (story === 'Zurück gehen') {
+                story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Untersuchen, - Nach rechts gehen');
+
+                if (story === 'Untersuchen') {
+                    story = prompt('Der Rosenbusch trägt frische, gut duftende Rosen. Du plückst eine Rose von dem Busch. Du hast jetzt eine Rose in deinem Inventar. Mögliche Befehle: - Nach rechts gehen');
+                }
+            }
+        }
+
+    } 
 
 
-    story = prompt('Du siehst den Wald.')
+    story = prompt('Du siehst den Wald.');
 }
 
 Story();
