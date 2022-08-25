@@ -92,6 +92,23 @@ function Story() {
 
     story = confirm('Während du mit der Angel ein paar Holzbalken geangelt hast kommt der Troll mit langen Gräsern im Arm, um die Bretter mit einander zu verzuren.');
 
+    // Brücke fertig repariert
+    story = confirm('Nach dem ihr rüber gegangen seit verschwindet die Brücke wieder.');
+    story = confirm('Der Troll meint “Mist, die Geister haben uns bemerkt und die Brücke wieder verschwinden lassen, damit wir nicht zurück kommen.”');
+    story = confirm('“Man muss ein Schwert aus einem Stein ziehen, dann kommt die Krone automatisch zu dem der das Schwert raus gezogen hat und nur der mit der Krone kann die Verwandlungen aufheben. Aber dieser Stein wird vermutlich gut bewacht sein.”');
+    
+    // Vor der Höhle
+    story = confirm('Nach zwei Stunden Fußmarsch seht ihr endlich die Höhle. Ihr seht aber auch Wachen mit Schwertern.');
+    story = prompt('Der Troll schlägt vor auf einen Baum zu klettern und von dort große Äste zu holen. Mögliche Befehle: - Nein, - Ja') 
+
+    if (story === "Nein") {
+        story = confirm('Der Troll klettert alleine auf einen Baum und holt zwei große dicke Äste.');
+    } else if (story === "Ja") {
+        story = confirm('Du und der Troll klettern auf neben einander stehende Bäume und jeder bricht sich einen dicken schweren Ast ab.');
+    }
+
+    // Bewaffnet vor der Höhle
+    story = prompt('Vor der Höhle')
 }
 
 Story();
