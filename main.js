@@ -84,7 +84,14 @@ function Story() {
     story = confirm('Der Troll ist überglücklich und sagt “Zur Höhle müssen wir hier lang gehen.”. Du folgst ihm.');
 
     // Vor der Brücke
-    
+    story = prompt('“Oh nein sie haben die Brücke zerstört.”, sagte der Troll. Im Fluss siehst du viel Holz rum schwimmen. Mögliche Befehle: - Mit der Angel das Holz raus angeln, - durch den Fluss schwimmen');
+
+    if (story === "durch den Fluss schwimmen") {
+        story = confirm('Darauf hin meint der Troll das es viel zu gefährlich sei durch den Fluss zu schwimmen und du dich deshalb für die Brücke entscheidest.')
+    }
+
+    story = confirm('Während du mit der Angel ein paar Holzbalken geangelt hast kommt der Troll mit langen Gräsern im Arm, um die Bretter mit einander zu verzuren.');
+
 }
 
 Story();
