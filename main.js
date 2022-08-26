@@ -1,125 +1,78 @@
-function Story() {
-    confirm('Herzlich Willkommen bei dem Text Adventure dem Geisterwald');
-    var story = prompt('Du befindest dich in einer verfallenen Hütte. Du siehst ein Fenster, ein Bett auf dem du sitzt und eine Tür. Was willst du tun? Mögliche Befehle: - Umschauen, - durch die Tür gehen, - Untersuchen');
-    
+document.getElementById("btn").onclick = function() {
+    btn.addEventListener('click', () => {
+        var story = document.getElementById("text");
+        var inp = document.getElementById("inp").value;
+        var btn = document.getElementById("btn");
 
+        btn.innerHTML = 'Einreichen'
 
-    // IN der Hütte
-    if (story === 'Umschauen') {
-        story =  prompt('Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Du hast jetzt eine Angelrute in deinem Inventar. Mögliche Befehle:  - durch die Tür gehen, Untersuchen');
+        // In der Hütte
+        if (inp === 'Umschauen') {
+            story.innerHTML = 'Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Du hast jetzt eine Angelrute in deinem Inventar. Mögliche Befehle:  - durch die Tür gehen, Untersuchen';
 
-        if (story === "Untersuchen") {
-            story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm. Du hast ein Wurm in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
-        }
-    
+            
+        }else if (inp === 'Untersuchen') {
+            story.innerHTML = 'Auf dem knarzenden Holzboden kricht ein kleiner Wurm. Du hast ein Wurm in deinem Inventar. Mögliche Befehle: - Umschauen, - durch die Tür gehen';
+        
 
-
-
-    }else if (story === 'Untersuchen') {
-        story =  prompt('Auf dem knarzenden Holzboden kricht ein kleiner Wurm. Du hast ein Wurm in deinem Inventar. Mögliche Befehle: - Umschauen, - durch die Tür gehen');
-         
-
-        if (story === 'Umschauen') {
-            story = prompt('Links von dir ist ein Fenster, direkt daneben steht das Bett auf dem du sitzt, vor dir ist die Tür und rechts daneben ist eine Angelrute. Du hast jetzt eine Angelrute in deinem Inventar. Mögliche Befehle: - durch die Tür gehen');
+        // Vor der Hütte
+        }else if (inp === 'durch die Tür gehen') {
+            story.innerHTML = 'Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Busch Untersuchen, - Nach links gehen, - Nach rechts gehen';
         }
 
-    }
+        if (inp === 'Nach links gehen') {
+            story.innerHTML = 'Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Angeln';
+            
+        }else if (inp === 'Busch Untersuchen') {
+            story.innerHTML = 'Der Rosenbusch trägt frische, gut duftende Rosen. Du plückst eine Rose von dem Busch. Du hast jetzt eine Rose in deinem Inventar. Mögliche Befehle: - Nach links gehen, - Nach rechts gehen';
+        
+        }else if (inp === 'Nach rechts gehen') {
+            story.innerHTML = 'In der ferne siehst du ein großes Tor aus Steinen die mit grünen Rankpflanzen verwachsen sind. Als du  ankommst kannst du auf einem alten Holz Schild “DER GEISTERWALD Betreten strengsten Verboten!!!” entziffern. Trotzdem gehst du durch. Als du durch gegangen bist verschließt sich das Tor, sodass du nicht mehr herauskommst. Vor dir stehen viele große Bäume auf dem matschigen Waldboden. Du stolperst ausversehen gegen einen der Bäume. Du hörst nur ein dumpfes “EY, pass doch auf”. Du schaust verwundert nach oben. Mögliche Befehle: - Baum Untersuchen';
 
-    // Vor der Hütte
-    story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Untersuchen, - Nach links gehen, - Nach rechts gehen');
-
-    if (story === 'Untersuchen') {
-        story = prompt('Der Rosenbusch trägt frische, gut duftende Rosen. Du plückst eine Rose von dem Busch. Du hast jetzt eine Rose in deinem Inventar. Mögliche Befehle: - Nach links gehen, - Nach rechts gehen');
-
-        if (story === 'Nach links gehen') {
-            story = prompt('Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Wurm mit Angel kombinieren und Angeln,');
-            if (story === 'Wurm mit Angel kombinieren und Angeln') {
-                story = prompt('Du hast einen Fisch gefangen. Du bist aber so hungrig das du ihn ist, doch der Fisch ist vergiftet und das Gift tötet dich. Mögliche Befehle: - Vom letzten Checkpoint starten');
-    
-                if (story === 'Vom letzten Checkpoint starten') {
-                    story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Nach rechts gehen');
-
-                }
-            }
         }
 
-    }else if (story === 'Nach links gehen') {
-        story = prompt('Du siehst einen tiefen Fluss mit vielen Stromschnellen. Was willst du tun? Mögliche Befehle: - Wurm mit Angel kombinieren und Angeln,');
-
-        if (story === 'Wurm mit Angel kombinieren und Angeln') {
-            story = prompt('Du hast einen Fisch gefangen. Du bist aber so hungrig das du ihn ist, doch der Fisch ist vergiftet und das Gift tötet dich. Mögliche Befehle: - Vom letzten Checkpoint starten');
-
-            if (story === 'Vom letzten Checkpoint starten') {
-                story = prompt('Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Untersuchen, - Nach rechts gehen');
-
-                if (story === 'Untersuchen') {
-                    story = prompt('Der Rosenbusch trägt frische, gut duftende Rosen. Du plückst eine Rose von dem Busch. Du hast jetzt eine Rose in deinem Inventar. Mögliche Befehle: - Nach rechts gehen');
-                }
-            }
+        // Nach links Story
+        if (inp === 'Angeln') {
+            story.innerHTML = 'Du hast einen Fisch gefangen. Du bist aber so hungrig das du ihn ist, doch der Fisch ist vergiftet und das Gift tötet dich. Mögliche Befehle: - Vom letzten Checkpoint starten';
         }
 
-    }
-
-    // Vor dem Wlad
-    story = confirm('In der ferne siehst du ein großes Tor aus Steinen die mit grünen Rankpflanzen verwachsen sind. Als du  ankommst kannst du auf einem alten Holz Schild “DER GEISTERWALD Betreten strengsten Verboten!!!” entziffern. Trotzdem gehst du durch. Als du durch gegangen bist verschließt sich das Tor, sodass du nicht mehr herauskommst.');
-    
-    // Im Wald
-    story = confirm('Vor dir stehen viele große Bäume auf dem matschigen Waldboden. Du stolperst ausversehen gegen einen der Bäume.');
-    story = confirm('Du hörst nur ein dumpfes “EY, pass doch auf”.')
-    story = prompt('Du schaust verwundert nach oben. Mögliche Befehle: - Untersuchen');
-
-    // Baum Untersuchen
-    story = confirm('Du gehst um den Baum rum und findest hinten einen kleinen Eingang. Von der Neugirde gepackt gehst du durch das kleine Loch und siehst einen kleinen Troll drin gefangen.');
-    story = confirm('Leise flüsterst du zu ihm “Was machst du hier?”. Der Troll antwortet “Wir wurden von dem König der Geister in Bäume verwandelt und er hat unsere Höhle eingenommen."');
-    story = prompt('Du schaust dich in dem Baum um und findest am Boden eine Steinplatte mit einer Rose drauf. Mögliche Befehle: - Rose auf die Platte legen');
-    
-    // Troll befreit
-    story = confirm('Plötzlich verschwindet der Baum und deine Rose. Du siehst nur noch den Troll der dir unglaublich dankbar ist.');
-    story = prompt('Der Troll bietet dich ihm zu helfen die Eindringlinge zu stürzen und die Höhle zu befreien um auch die anderen Trolle wieder zu befreien. Mögliche Befehle: - Ja, - Nein')
-
-    if (story === 'Nein') {
-        story = confirm('Der Troll fleht dich an ihm zu helfen bis du einwiligst und ihm hilfst.');
-    }
-
-    story = confirm('Der Troll ist überglücklich und sagt “Zur Höhle müssen wir hier lang gehen.”. Du folgst ihm.');
-
-    // Vor der Brücke
-    story = prompt('“Oh nein sie haben die Brücke zerstört.”, sagte der Troll. Im Fluss siehst du viel Holz rum schwimmen. Mögliche Befehle: - Mit der Angel das Holz raus angeln, - durch den Fluss schwimmen');
-
-    if (story === "durch den Fluss schwimmen") {
-        story = confirm('Darauf hin meint der Troll das es viel zu gefährlich sei durch den Fluss zu schwimmen und du dich deshalb für die Brücke entscheidest.')
-    }
-
-    story = confirm('Während du mit der Angel ein paar Holzbalken geangelt hast kommt der Troll mit langen Gräsern im Arm, um die Bretter mit einander zu verzuren.');
-
-    // Brücke fertig repariert
-    story = confirm('Nach dem ihr rüber gegangen seit verschwindet die Brücke wieder.');
-    story = confirm('Der Troll meint “Mist, die Geister haben uns bemerkt und die Brücke wieder verschwinden lassen, damit wir nicht zurück kommen.”');
-    story = confirm('“Man muss ein Schwert aus einem Stein ziehen, dann kommt die Krone automatisch zu dem der das Schwert raus gezogen hat und nur der mit der Krone kann die Verwandlungen aufheben. Aber dieser Stein wird vermutlich gut bewacht sein.”');
-    
-    // Vor der Höhle
-    story = confirm('Nach zwei Stunden Fußmarsch seht ihr endlich die Höhle. Ihr seht aber auch Wachen mit Schwertern.');
-    story = prompt('Der Troll schlägt vor auf einen Baum zu klettern und von dort große Äste zu holen. Mögliche Befehle: - Nein, - Ja') 
-
-    if (story === "Nein") {
-        story = confirm('Der Troll klettert alleine auf einen Baum und holt zwei große dicke Äste.');
-    } else if (story === "Ja") {
-        story = confirm('Du und der Troll klettern auf neben einander stehende Bäume und jeder bricht sich einen dicken schweren Ast ab.');
-    }
-
-    // Bewaffnet vor der Höhle
-    story = prompt('Vor der Höhle')
-
-    // TODO Anschleichen scripten
-
-    // Kampf mit den Wachen vor der Höhle
-    for (var i = 0; i <= 3; i++) {
-        if (i < 3) {
-            story = confirm('Nochmal schlagen!');
-        }else if (i === 3) {
-            story = confirm('Du hast es geschaft');
+        if (inp === 'Vom letzten Checkpoint starten') {
+            story.innerHTML = 'Du stehst vor der Tür. Du siehst einen Feld weg der nach links und rechts geht. Direkt neben der Tür ist ein Rosenbusch. Mögliche Befehle: - Busch Untersuchen, -  Nach rechts gehen';
         }
-    }
-}
 
-Story();
+        // Im Wald Baum Untersuchen
+        if (inp === 'Baum Untersuchen') {
+            story.innerHTML = 'Du gehst um den Baum rum und findest hinten einen kleinen Eingang. Von der Neugirde gepackt gehst du durch das kleine Loch und siehst einen kleinen Troll drin gefangen. Leise flüsterst du zu ihm “Was machst du hier?”. Der Troll antwortet “Wir wurden von dem König der Geister in Bäume verwandelt und er hat unsere Höhle eingenommen.”Du schaust dich in dem Baum um und findest am Boden eine Steinplatte mit einer Rose drauf. Mögliche Befehle: - Rose auf die Platte legen';
+        }
+
+        //Rose auf Platte -> Schlüssel
+        if (inp === 'Rose auf die Platte legen') {
+            story.innerHTML = 'Plötzlich verschwindet der Baum und deine Rose. Du siehst nur noch den Troll der dir unglaublich dankbar ist. Der Troll bietet dich ihm zu helfen die Eindringlinge zu stürzen und die Höhle zu befreien um auch die anderen Trolle wieder zu befreien. Mögliche Befehle: - Ja, - Nein';
+        }
+
+        if (inp === 'Ja') {
+            story.innerHTML = 'Der Troll ist überglücklich und sagt “Zur Höhle müssen wir hier lang gehen.”. Du folgst ihm. Ihr seid bei einer zerstörten Brücke angekomen“Oh nein sie haben die Brücke zerstört.”, sagte der Troll. Im Fluss siehst du viel Holz rum schwimmen. Mögliche Befehle: - Angel benutzen, - durch schwimmen';
+        }else if (inp === 'Nein') {
+            story.innerHTML = 'Der Troll fleht dich an ihm zu helfen bis du einwiligst und ihm hilfst. Ihr seid bei einer zerstörten Brücke angekomen“Oh nein sie haben die Brücke zerstört.”, sagte der Troll. Im Fluss siehst du viel Holz rum schwimmen. Mögliche Befehle: - Angel benutzen, - durch schwimmen';
+        }
+
+        // Brücke reparieren
+        if (inp === 'Angel benutzen') {
+            story.innerHTML = 'Während du mit der Angel ein paar Holzbalken geangelt hast kommt der Troll mit langen Gräsern im Arm, um die Bretter mit einander zu verzuren. Mögliche Befehle: - bauen';
+        }else if (inp === 'durch schwimmen') {
+            story.innerHTML = 'Darauf hin meint der Troll das es viel zu gefährlich sei durch den Fluss zu schwimmen und du dich deshalb für die Brücke entscheidest. Mögliche Befehle: - bauen';
+        }
+
+        if (inp === 'bauen') {
+            story.innerHTML = 'Nach einigen Stunden Angeln und Bretter verzuren ist es soweit die Brücke ist fertig. kämpfen';
+        }        
+
+        // TODO Anschleichen
+
+        // Kampf mit den Wachen
+        if (inp ==='kämpfen') { 
+            
+        }
+            
+});
+} 
