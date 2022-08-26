@@ -109,6 +109,17 @@ function Story() {
 
     // Bewaffnet vor der Höhle
     story = prompt('Vor der Höhle')
+
+    // TODO Anschleichen scripten
+
+    // Kampf mit den Wachen vor der Höhle
+    for (var i = 0; i <= 3; i++) {
+        if (i < 3) {
+            story = confirm('Nochmal schlagen!');
+        }else if (i === 3) {
+            story = confirm('Du hast es geschaft');
+        }
+    }
 }
 
 Story();
