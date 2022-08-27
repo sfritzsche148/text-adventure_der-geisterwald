@@ -75,6 +75,7 @@ document.getElementById("btn").onclick = function() {
         }
 
         // TODO Höhle beschreiben
-            
+        
+        // TODO Fackeln abschlagen
 });
 } 
