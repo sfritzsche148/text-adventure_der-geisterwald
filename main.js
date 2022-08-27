@@ -73,6 +73,8 @@ document.getElementById("btn").onclick = function() {
         if (inp ==='kämpfen') { 
             
         }
+
+        // TODO Höhle beschreiben
             
 });
 } 
