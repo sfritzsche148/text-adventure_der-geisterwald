@@ -9,6 +9,7 @@ btn.addEventListener('click', function () {
         }
     }
 
+
     function Begin() {
         story = prompt('Herzlich Willkommen bei DER GEISTERWALD');
     }
@@ -22,4 +23,20 @@ btn.addEventListener('click', function () {
         confirm(player.name);
     }
     CreatePlayer();
+
+    // first dialogue with the hut owner -> HO
+    function FirstDialogueHO() {
+        var choice1 = prompt('');
+
+        
+    }
+    FirstDialogueHO();
+
+    // innfront of the hut
+    function StoryInfrontOfHut() {
+        var choice2 = prompt('Add');
+
+    }
+    StoryInfrontOfHut();
+
 })
