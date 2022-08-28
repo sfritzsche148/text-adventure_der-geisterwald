@@ -3,30 +3,25 @@ btn.addEventListener('click', function () {
     var btn = document.getElementById('btn');
     
 
+    // Player Blueprint
     class Player  {
         constructor(name) {
             this.name = name;
         }
     }
 
-
-    function Begin() {
-        story = prompt('Herzlich Willkommen bei DER GEISTERWALD');
-    }
-    Begin();
-
     function CreatePlayer() {
-        let playername = prompt('Name:');
+        let playername = prompt('Herzlich Willkommen bei dem Text Adventure Der Geisterwald. Um zu starten gib bitte deinen Namen ein:');
 
         var player = new Player(playername);
 
-        confirm(player.name);
+        confirm('Hallo' + player.name + '. ');
     }
     CreatePlayer();
 
     // first dialogue with the hut owner -> HO
     function FirstDialogueHO() {
-        var choice1 = prompt('');
+        var choice1 = prompt('Choice1');
 
         
     }
