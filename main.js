@@ -29,7 +29,7 @@ btn.addEventListener('click', function () {
 
     // innfront of the hut
     function StoryInfrontOfHut() {
-        var choice2 = prompt('Add');
+        var choice2 = prompt('choice2');
 
     }
     StoryInfrontOfHut();
