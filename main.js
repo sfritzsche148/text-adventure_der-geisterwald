@@ -2,12 +2,16 @@ btn.addEventListener('click', function () {
 
     // Global variables
     var btn = document.getElementById('btn');
+    var player;
     var choice1;
     var choice2;
     var choice3;
     var choice4;
     var choice5;
-    
+    var choice6;
+    var choice7;
+    var choice8;
+    var choice9
 
     // Player Blueprint
     class Player  {
@@ -19,7 +23,7 @@ btn.addEventListener('click', function () {
     function CreatePlayer() {
         let playername = prompt('Herzlich Willkommen bei dem Text Adventure Der Geisterwald. Um zu starten gib bitte deinen Namen ein:');
 
-        var player = new Player(playername);
+        player = new Player(playername);
 
         confirm('Hallo ' + player.name + '. ');
     }
@@ -56,9 +60,9 @@ btn.addEventListener('click', function () {
         if (choice4 === 'Auframen') {
             for (var i = 0; i <= 3; i++) {
                 if (i < 3) {
-                    choice5 = confirm('Noch mal probieren');
+                    choice5 = confirm('Die Tür ist noch nicht offen, du must dich nochmal gegen die Tür stürzen.');
                 }else if (i === 3) {
-                    choice5 = prompt('offen')
+                    choice5 = confirm(player.name + ' du hast es geschaft. Die Tür ist endlich offen.');
                 }
             }
         }
@@ -67,9 +71,54 @@ btn.addEventListener('click', function () {
 
     // innfront of the hut
     function StoryInfrontOfHut() {
-        
+        choice6 = prompt('Du stehst jetzt vor der Tür. Direkt vor dir geht ein Feldweg entlang, einmal nach rechts und links und gerade aus. Welchen willst du gehen? Mögliche Befehle: - links; - rechts; - geradeaus');        
 
     }
     StoryInfrontOfHut();
 
+    if (choice6 === 'links') {
+        PathLeft();
+    }else if (choice6 === 'rechts') {
+        PathRight();
+    }else if (choice6 === 'geradeaus') {
+        PathStraight();
+    }
+
+    // Left Path Story
+    function PathLeft() {
+        choice7 = prompt('Du gehst nach links. Dabei läufst du einen Pfad mit einer rechts Kurve, auf der Außenseite des Pfades steht ein schön duftender Rosenbusch. Mögliche Befehle: - Untersuchen');
+        if (choice7 === 'Untersuchen') {
+            choice8 = prompt('Du nimmst eine Rose auf und gehst weiter bis du zu einem Teich kommst. Mögliche Befehle: - Angeln');
+        }
+
+        if (choice8 === 'Angeln') {
+            PathLeftFishing();
+        }
+
+        // Fishing at the Lake
+        function PathLeftFishing() {
+            for (var i = 0; i <= 2; i++)  {
+                if (i < 2) {
+                    choice9 = confirm('Leider noch nichts gefangen.');
+                }else if (i === 2) {
+                    choice9 = confirm('Du hast endlich einen Fisch gefangen. Du folgst mit dem Fisch, deiner Angelrute und der Rose weiter dem Feldweg.');
+                }
+            }
+        }
+    }
+
+    // Right Path Story
+    function PathRight() {
+        confirm('RechterPfad');
+    }
+
+    // Straight Path Story
+    function PathStraight() {
+        confirm('Weg geradeaus');
+    }
+
+    function Wood() {
+        confirm('Nach einem langen Fuss Marsch siehst du ein großes steinernes Tor mit der Aufschrift "DER GEISTERWALD".');
+    }
+    Wood();
 })
