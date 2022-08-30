@@ -11,7 +11,9 @@ btn.addEventListener('click', function () {
     var choice6;
     var choice7;
     var choice8;
-    var choice9
+    var choice9;
+    var choice10;
+    var choice11;
 
     // Player Blueprint
     class Player  {
@@ -109,7 +111,21 @@ btn.addEventListener('click', function () {
 
     // Right Path Story
     function PathRight() {
-        confirm('RechterPfad');
+        choice10 = prompt('Du bist nach rechts gegangen. Vor dir erscheint ein großer See. Mögliche Befehle: - Angeln');
+
+        if (choice10 === 'Angeln') {
+            PathRightFishing();
+        }
+
+        function PathRightFishing() {
+            for (var i = 0; i <= 2; i++) {
+                if (i < 2) {
+                    choice11 = confirm('Du hast leider noch nichts gefangen.');
+                }else if (i === 2) {
+                    choice11 = confirm('Du hast endlich einen Fisch gefangen. Du folgst mit dem Fisch, deiner Angelrute und der Rose weiter dem Feldweg.')
+                }
+            }
+        }
     }
 
     // Straight Path Story
