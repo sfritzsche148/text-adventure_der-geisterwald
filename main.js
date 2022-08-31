@@ -1,19 +1,20 @@
 btn.addEventListener('click', function () {
 
     // Global variables
-    var btn = document.getElementById('btn');
-    var player;
-    var choice1;
-    var choice2;
-    var choice3;
-    var choice4;
-    var choice5;
-    var choice6;
-    var choice7;
-    var choice8;
-    var choice9;
-    var choice10;
-    var choice11;
+    // TODO alles in let umschreiben
+    let btn = document.getElementById('btn');
+    let player;
+    let choice1;
+    let choice2;
+    let choice3;
+    let choice4;
+    let choice5;
+    let choice6;
+    let choice7;
+    let choice8;
+    let choice9;
+    let choice10;
+    let choice11;
 
     // Player Blueprint
     class Player  {
