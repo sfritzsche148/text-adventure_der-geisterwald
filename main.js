@@ -15,6 +15,12 @@ btn.addEventListener('click', function () {
     let choice9;
     let choice10;
     let choice11;
+    let choice12;
+    let choice13;
+    let choice14;
+    let choice15;
+    let choice16;
+    
 
     // Player Blueprint
     class Player  {
@@ -100,7 +106,7 @@ btn.addEventListener('click', function () {
 
         // Fishing at the Lake
         function PathLeftFishing() {
-            for (var i = 0; i <= 2; i++)  {
+            for (let i = 0; i <= 2; i++)  {
                 if (i < 2) {
                     choice9 = confirm('Leider noch nichts gefangen.');
                 }else if (i === 2) {
@@ -119,19 +125,43 @@ btn.addEventListener('click', function () {
         }
 
         function PathRightFishing() {
-            for (var i = 0; i <= 2; i++) {
+            for (let i = 0; i <= 2; i++) {
                 if (i < 2) {
                     choice11 = confirm('Du hast leider noch nichts gefangen.');
                 }else if (i === 2) {
-                    choice11 = confirm('Du hast endlich einen Fisch gefangen. Du folgst mit dem Fisch, deiner Angelrute und der Rose weiter dem Feldweg.')
+                    choice11 = confirm('Du hast endlich einen Fisch gefangen. Du folgst weiter dem Feldweg.');
                 }
             }
+        }
+        choice12 = prompt('Du erblickst einen schön duftendenden Rosenbusch. Mögliche Befehle: - Untersuchen');
+
+        if (choice12 === 'Untersuchen') {
+            choice13 = confirm('Du nimmst eine Rose auf und gehst den Feldweg weiter');
         }
     }
 
     // Straight Path Story
     function PathStraight() {
-        confirm('Weg geradeaus');
+        choice14 = confirm('Du bist geradeaus gegangen. Dabei läufst du einen Pfad miteiner rechts Kurve, auf der Außenseite des Pfades steht ein schön duftender Rosenbusch. Mögliche Befehle: - Untersuchen');
+        
+        if (choice14 === 'Untersuchen') {
+            choice15 = prompt('Du nimmst eine Rose auf und gehst weiter bis du zu einem Teich kommst. Mögliche Befehle: - Angeln');
+        }
+
+        if (choice15 === 'Angeln') {
+            PathStraightFishing();
+        }
+
+        function PathStraightFishing() {
+            for (var i = 0; i <= 2; i++) {
+                if (i < 2) {
+                    choice16 = confirm('Du hast leider noch nichts gefangen');
+                }else if (i === 2) {
+                    choice16 = confirm('Du hast endlich einen Fisch gefangen. Du folgst weiter dem Feldweg.');
+                }
+            }
+        }
+
     }
 
     function Wood() {
