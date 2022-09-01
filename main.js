@@ -25,8 +25,9 @@ btn.addEventListener('click', function () {
 
     // Player Blueprint
     class Player  {
-        constructor(name) {
+        constructor(name, hp) {
             this.name = name;
+            this.hp = hp = 100;
         }
     }
 
