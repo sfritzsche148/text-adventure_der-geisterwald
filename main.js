@@ -20,6 +20,7 @@ btn.addEventListener('click', function () {
     let choice14;
     let choice15;
     let choice16;
+    let choice17;
     
 
     // Player Blueprint
@@ -142,7 +143,7 @@ btn.addEventListener('click', function () {
 
     // Straight Path Story
     function PathStraight() {
-        choice14 = confirm('Du bist geradeaus gegangen. Dabei läufst du einen Pfad miteiner rechts Kurve, auf der Außenseite des Pfades steht ein schön duftender Rosenbusch. Mögliche Befehle: - Untersuchen');
+        choice14 = prompt('Du bist geradeaus gegangen. Dabei läufst du einen Pfad miteiner rechts Kurve, auf der Außenseite des Pfades steht ein schön duftender Rosenbusch. Mögliche Befehle: - Untersuchen');
         
         if (choice14 === 'Untersuchen') {
             choice15 = prompt('Du nimmst eine Rose auf und gehst weiter bis du zu einem Teich kommst. Mögliche Befehle: - Angeln');
@@ -164,8 +165,17 @@ btn.addEventListener('click', function () {
 
     }
 
-    function Wood() {
-        confirm('Nach einem langen Fuss Marsch siehst du ein großes steinernes Tor mit der Aufschrift "DER GEISTERWALD".');
+    // Story in the forest
+    function InTheForest() {
+        choice16 =  confirm('Nach einem langen Fuss Marsch siehst du ein großes steinernes Tor mit der Aufschrift "DER GEISTERWALD".');
+        choice16 =  prompt('Du stöhst ausversehen gegen einen Baum. Daraufhin vernimmst du ein "EY PASS DOCH AUF!!". Mögliche Befehle: - Untersuchen');
+
+        if (choice16 === 'Untersuchen') {
+            choice17 = prompt('Du gehst um den Baum herum und findest eine kleine Luke durch die du gehst. Auf der anderen Seite findest du einen Troll gefangen im Baum. Mögliche Befehle: - Mit Troll sprechen');
+        }
+
+        // TODO Dialog mit Troll (verzaubert, Rose als Schlüssel)
+        // TODO Brücke reparieren
     }
-    Wood();
+    InTheForest();
 })
