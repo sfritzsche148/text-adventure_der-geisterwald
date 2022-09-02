@@ -23,6 +23,9 @@ btn.addEventListener('click', function () {
     let choice17;
     let choice18;
     let choice19;
+    let choice20;
+    let choice21;
+    let choice22;
     
 
     // Player Blueprint
@@ -95,6 +98,7 @@ btn.addEventListener('click', function () {
     }
     StoryInfrontOfHut();
 
+    // Choose Path
     if (choice6 === 'links') {
         PathLeft();
     }else if (choice6 === 'rechts') {
@@ -184,23 +188,45 @@ btn.addEventListener('click', function () {
         }
 
         // Dialogue with troll
-        if (choice17 === 'Mit Troll sprechen') {
-            choice18 = prompt('"Hallo??", fragst du den Troll. Der Troll Antwortet mit heller Stimme "Endlich kommt jemand um uns zubefreien." Mögliche Befehle: - befereien?; Inventar: ' + player.inventory[1] + player.inventory[3] + player.inventory[4]);
+        function DialogueTroll() {
+            if (choice17 === 'Mit Troll sprechen') {
+                choice18 = prompt('"Hallo??", fragst du den Troll. Der Troll Antwortet mit heller Stimme "Endlich kommt jemand um uns zubefreien." Mögliche Befehle: - befreien?; Inventar: ' + player.inventory[1] + player.inventory[3] + player.inventory[4]);
+            }
+
+            if (choice18 === 'befreien') {
+                choice19 = confirm('"Du bist gar nicht da um uns zubefreien", grummelte der Troll. "Das meinte der alte Mann", flüsterst du. Daraufhin sagt der Troll wir wurden von den Geistern überfallen und in Bäume verwandelt. Inventar: ' + player.inventory[1] + player.inventory[3] + player.inventory[4]);
+                choice19 = prompt('Auf dem Boden findest du eine Platte mit einer Rose abgebildet. Instenktiv legst du die Rose auf die Platte. Plötzlich verschwindet der Baum und ein kleiner Troll steht vor dir und fragt dich ob du ihm helfen willst. Mögliche Befehle: - Ja; - Nein; Inventar: ' + player.inventory[1] + player.inventory[3]);
+            }
+
+            // choose to help the troll
+            if (choice19 === 'Ja') {
+                choice20 = confirm('Der Troll freut sich das du ihm hilfst. Er sagt dir das die Geister die Höhle der Trolle eingenommen haben und das man das Schwert aus einem Stein ziehen muss um die an die Krone des Herrschers zu gelangen. Inventar: ' + player.inventory[1] + player.inventory[3]);
+            }else if (choice19 === 'Nein') {
+                choice20 = confirm('Der Troll redet so lange auf dich ein, bis du ihm schließlich doch hilfst. Er sagt dir das die Geister die Höhle der Trolle eingenommen haben und das man das Schwert aus einem Stein ziehen muss um die an die Krone des Herrschers zu gelangen. Inventar: ' + player.inventory[1] + player.inventory[3]);
+            }
         }
+        DialogueTroll();
 
-        if (choice18 === 'befreien') {
-            choice19 = confirm('"Du bist gar nicht da um uns zubefreien", grummelte der Troll. "Das meinte der alte Mann", flüsterst du. Daraufhin sagt der Troll wir wurden von den Geistern überfallen und in Bäume verwandelt. Inventar: ' + player.inventory[1] + player.inventory[3] + player.inventory[4]);
-            choice19 = prompt('Auf dem Boden findest du eine Platte mit einer Rose abgebildet. Instenktiv legst du die Rose auf die Platte. Plötzlich verschwindet der Baum und ein kleiner Troll steht vor dir und fragt dich ob du ihm helfen willst. Mögliche Befehle: - Ja; - Nein; Inventar: ' + player.inventory[1] + player.inventory[3]);
+        // bridge repairs
+        function BridgeRepairs() {
+            choice20 = prompt('Nach einem langen Fuss Marsch kommt ihr an der Brücke an, doch sie ist zerstört. Unten im Fluss siehst du Holz schwimmen. Mögliche Befehle: - Holz angeln; - durch schwimmen; Inventar: ' + player.inventory[1] + player.inventory[3]);
+
+            if (choice20 === 'Holz angeln') {
+                choice21 = confirm('Während du das Holz aus dem Fluss angelst, holt der Troll Lianen um die Bretter mit einander zu verzuhren. Inventar: ' + player.inventory[1] + player.inventory[3]);
+            }else if (choice20 === 'durch schwimmen') {
+                choice21 = confirm('Der Troll meint das es keine gute Idee ist durch den Fluss zu schwimmen, weshalb du es nicht tust und anfängst das Holz aus dem Fluss zu angeln. Inventar: ' + player.inventory[1] + player.inventory[3]);
+            }
+
+            choice21 = prompt('Nach einigen Stunden Arbeit ist die Brücke repariert und ihr geht darüber. Auf der anderen Seite geht ihr ein Stück bis ihr in der Ferne die Höhle seht, aber sie wird von zwei Wachen bewacht. Der Troll sagt: "Ich hab einen Plan.". Mögliche Fragen: - Welchen?; Inventar: ' + player.inventory[1] + player.inventory[3]);
         }
+        BridgeRepairs();
 
-        // choose to help the troll
-        if (choice19 === 'Ja') {
-
-        }else if (choice19 === 'Nein') {
+        // fight with guard
+        function FightWithGuard() {
 
         }
-        // TODO bridge repairs
-        // TODO fight with security
+        FightWithGuard();
+
         // TODO restore hp
     }
     InTheForest();
