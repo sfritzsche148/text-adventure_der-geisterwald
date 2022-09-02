@@ -26,13 +26,15 @@ btn.addEventListener('click', function () {
     let choice20;
     let choice21;
     let choice22;
+    let choice23;
+    let choice24;
     
 
     // Player Blueprint
     class Player  {
         constructor(name, hp, inventory) {
             this.name = name;
-            this.hp = hp = 100;
+            this.hp = hp;
             this.inventory = inventory;
         }
     }
@@ -40,9 +42,11 @@ btn.addEventListener('click', function () {
     function CreatePlayer() {
         let playername = prompt('Herzlich Willkommen bei dem Text Adventure Der Geisterwald. Um zu starten gib bitte deinen Namen ein:');
 
-        playerinventory = ["Nichts", "Angelrute; ", "Wurm; ", "Fisch; ", "Rose; "];
+        let playerinventory = ["Nichts", "Angelrute; ", "Wurm; ", "Fisch; ", "Rose; "];
+        
+        let playerhp = 100;
 
-        player = new Player(playername, 100, playerinventory);
+        player = new Player(playername, playerhp, playerinventory);
 
         confirm('Hallo ' + player.name + '. Inventar: ' + player.inventory[0] );
     }
@@ -217,17 +221,36 @@ btn.addEventListener('click', function () {
                 choice21 = confirm('Der Troll meint das es keine gute Idee ist durch den Fluss zu schwimmen, weshalb du es nicht tust und anfängst das Holz aus dem Fluss zu angeln. Inventar: ' + player.inventory[1] + player.inventory[3]);
             }
 
-            choice21 = prompt('Nach einigen Stunden Arbeit ist die Brücke repariert und ihr geht darüber. Auf der anderen Seite geht ihr ein Stück bis ihr in der Ferne die Höhle seht, aber sie wird von zwei Wachen bewacht. Der Troll sagt: "Ich hab einen Plan.". Mögliche Fragen: - Welchen?; Inventar: ' + player.inventory[1] + player.inventory[3]);
+            choice21 = prompt('Nach einigen Stunden Arbeit ist die Brücke repariert und ihr geht darüber. Auf der anderen Seite geht ihr ein Stück bis ihr in der Ferne die Höhle seht, aber sie wird von zwei Wachen bewacht. Der Troll sagt: "Ich hab einen Plan.". Mögliche Fragen: - Was für ein Plan?; Inventar: ' + player.inventory[1] + player.inventory[3]);
         }
         BridgeRepairs();
 
         // fight with guard
         function FightWithGuard() {
+            if (choice21 === 'Was für ein Plan?') {
+                choice22 = prompt('Doch der Troll verschwindet während du ihn fragst. Wenige Sekunden später kommt er mit zwei dicken Ästen wieder und sagt: "Wir schleichen uns von zwei Seiten an und jeder von uns überwältigt einen.". Langsam schleicht ihr euch an. Mögliche Befehle: - Angreifen; Inventar: ' + player.inventory[1] + player.inventory[3]);
+            }
+
+            if (choice22 === 'Angreifen') {
+                for (let i = 0; i <= 2; i++) {
+                    if (i < 2) {
+                        choice23 = confirm('Du hast es leider noch nicht geschaft. NOCHMAL ZUSCHLAGEN!! Inventar: ' + player.inventory[1] + player.inventory[3]);
+                    }else if (i === 2) {
+                        choice23 = prompt('Du hast es geschaft. Doch hat dir die Wache Schaden zugefügt. HP: ' + (player.hp - 40) + ' Der Troll sagt dir das du mit dem Fisch dich heilen kannst. Mögliche Befehle: - Fisch essen; Inventar: ' + player.inventory[1] + player.inventory[3]);
+                    }
+                }
+            }
 
         }
         FightWithGuard();
 
-        // TODO restore hp
+        // Restore HP
+        function RestoreHP() {
+            if (choice23 === 'Fisch essen') {
+                choice24 = confirm('Deine HP Anzahl ist jetzt wieder bei ' + player.hp + '.');
+            }
+        }
+        RestoreHP();
     }
     InTheForest();
 })
