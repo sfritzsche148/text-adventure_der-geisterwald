@@ -28,6 +28,7 @@ btn.addEventListener('click', function () {
     let choice22;
     let choice23;
     let choice24;
+    let choice25;
     
 
     // Player Blueprint
@@ -42,13 +43,13 @@ btn.addEventListener('click', function () {
     function CreatePlayer() {
         let playername = prompt('Herzlich Willkommen bei dem Text Adventure Der Geisterwald. Um zu starten gib bitte deinen Namen ein:');
 
-        let playerinventory = ["Nichts", "Angelrute; ", "Wurm; ", "Fisch; ", "Rose; "];
+        let playerinventory = ["Nichts", "Angelrute; ", "Wurm; ", "Fisch; ", "Rose; ", "Fackel; "];
         
         let playerhp = 100;
 
         player = new Player(playername, playerhp, playerinventory);
 
-        confirm('Hallo ' + player.name + '. Inventar: ' + player.inventory[0] );
+        confirm('Hallo ' + player.name + '. Inventar: ' + player.inventory[0]);
     }
     CreatePlayer();
 
@@ -247,10 +248,24 @@ btn.addEventListener('click', function () {
         // Restore HP
         function RestoreHP() {
             if (choice23 === 'Fisch essen') {
-                choice24 = confirm('Deine HP Anzahl ist jetzt wieder bei ' + player.hp + '.');
+                choice24 = confirm('Deine HP Anzahl ist jetzt wieder bei ' + player.hp + '. Inventar: ' + player.inventory[1]);
             }
         }
         RestoreHP();
     }
     InTheForest();
+
+    // In the cave
+    function InTheCave() {
+        choice24 = prompt('Jetzt ist der Eingang zur Höhle frei. Ihr geht rein, doch es ist stockdunkel. An der Seite siehst du eine Fackel. Mögliche Befehle: - Fackel nehmen; Inventar: ' + player.inventory[1]);
+
+        switch(choice24) {
+            case 'Fackel nehmen':
+                choice25 = confirm('Du hast die Fackel aufgenommen. Inventar: ' + player.inventory[1] + player.inventory[5]); 
+                break;
+        }
+
+        choice25 = prompt('Nach');
+    }
+    InTheCave();
 })
