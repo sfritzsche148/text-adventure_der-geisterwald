@@ -29,6 +29,8 @@ btn.addEventListener('click', function () {
     let choice23;
     let choice24;
     let choice25;
+    let choice26;
+    let choice27;
     
 
     // Player Blueprint
@@ -265,7 +267,15 @@ btn.addEventListener('click', function () {
                 break;
         }
 
-        choice25 = prompt('Nach');
+        choice25 = confirm('Setzt siehst du einen langen schwarzen Gang vor dir. An den Seiten siehst du viele in den Stein gemeiselten Bilder. Der Troll sagt dir dass das Schwert, welches man aus dem Stein ziehen muss, am Ende der Höhle befindet. Das heißt das du auch an den erobereren vorbei musst, damit der Troll es rausziehen kann und die anderen Trolle zu befreien. Inventar: ' + player.inventory[1] + player.inventory[5]);
+        
+        if(choice26 = confirm('Um weiter zugehen drücke auf Ok. Inventar: ' + player.inventory[1] + player.inventory[5])) {
+            choice27 = confirm('Du bist weitergegangen. Inventar: ' + player.inventory[1] + player.inventory[5]);
+        }else {
+            choice27 = confirm('Der Troll zwingt dich weiter zugehen. Der Troll geht vor und ihm hinterher. Inventar: ' + player.inventory[1] + player.inventory[5]);
+        }
+
+        choice27 = prompt('Nach ein paar Minuten Fussmarsch siehst du hinter einer Kurve Wachen die den Anführer der eroberer. Inventar: ' + player.inventory[1] + player.inventory[5]);
     }
     InTheCave();
 })
