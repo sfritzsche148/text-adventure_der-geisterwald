@@ -1,8 +1,7 @@
 btn.addEventListener('click', function () {
 
     // Global variables
-    // TODO alles in let umschreiben
-    let btn = document.getElementById('btn');
+    let body = document.getElementById('body');
     let player;
     let choice1;
     let choice2;
@@ -31,7 +30,14 @@ btn.addEventListener('click', function () {
     let choice25;
     let choice26;
     let choice27;
-    
+    let choice28;
+    let choice29;
+    let choice30;
+    let choice31;
+    let choice32;
+    let choice33;
+    let choice34;
+    let choice35;
 
     // Player Blueprint
     class Player  {
@@ -275,7 +281,64 @@ btn.addEventListener('click', function () {
             choice27 = confirm('Der Troll zwingt dich weiter zugehen. Der Troll geht vor und ihm hinterher. Inventar: ' + player.inventory[1] + player.inventory[5]);
         }
 
-        choice27 = prompt('Nach ein paar Minuten Fussmarsch siehst du hinter einer Kurve Wachen die den Anführer der eroberer. Inventar: ' + player.inventory[1] + player.inventory[5]);
+        choice27 = prompt('Nach ein paar Minuten Fussmarsch siehst du hinter einer Kurve die Wachen und ihren Anführer. Der Troll überlegt sich mit dir einen Plan. Mögliche Befehle: - Was ist dein Plan?; Inventar: ' + player.inventory[1] + player.inventory[5]);
+
+        if (choice27 === 'Was ist dein Plan?') {
+            choice28 = prompt('Der Troll erzählz dir von seinem Plan. Und zwar greifen wir die beiden äußeren mit unseren Ästen an, nehmen dann die Schwerter der beiden und überweltigen dann die restlichen. Mögliche Befehle: - Angreifen; Inventar: ' + player.inventory[1] + player.inventory[5]);
+        }
+
+        if (choice28 === 'Angreifen') {
+            FightCaveGuard();
+        }
+        // Fight with the Cave Guards
+        function FightCaveGuard() {
+            for (let i = 0; i <= 2; i++) {
+                if (i < 2) {
+                    choice29 = confirm('Die erste Wache ist noch nicht zu boden gegangen. Noch mal schlagen. Inventar: ' + player.inventory[1] + player.inventory[5]);
+                }else if (i === 2) {
+                    choice29 = prompt('Die erste Wache ist zu boden gegangen. Mögliche Befehle: - Schwert nehmen; Inventar: ' + player.inventory[1] + player.inventory[5])
+                }
+            }
+
+            if (choice29 === 'Schwert nehmen') {
+                choice30 = prompt('Du hast das Schwert aufgenommen. Mögliche Befehle: - Angreifen; Inventar: ' + player.inventory[1] + player.inventory[5]);
+            }
+
+            if (choice30 === 'Angreifen') {
+                for (let i = 0; i <= 2; i++) {
+                    if (i < 2) {
+                        choice31 = confirm('Die Wache ist noch nicht zuboden gegangen. Nochmal schlagen. Inventar: ' + player.inventory[1] + player.inventory[5]);
+                    }else if (i === 2) {
+                        choice31 = confirm('Du hast sie überweltigt.');
+                    }
+                }
+            }
+        }
+
+        choice31 = prompt('Du hast es geschaft die Wachen zu überweltigen doch dabei ist dein Schwert zerbrochen. Mögliche Befehle: - Mit Königin sprechen; Inventar: ' + player.inventory[1] + player.inventory[5]);
+
+        if (choice31 === 'Mit Königin sprechen') {
+            choice32 = prompt('Du fängst gerade an mit der Königin zu sprechen als du den Troll hinter ihr erblickst und er sie überweltigt. Der Troll staunt: "Das war aber einfach." Mögliche Befehle: - Troll loben; Inventar: ' + player.inventory[1] + player.inventory[5]);
+        }
+        
+        if (choice32 === 'Troll loben') {
+            choice33 = prompt('Der Troll scheint glücklich zu sein, denn er erblickt das Schwert, was ihn dem Stein feststeckt. Mögliche Befehle: Schwert rausziehen; Inventar: ' + player.inventory[1] + player.inventory[5]);
+        }
+
+        if (choice33 === 'Schwert rausziehen') {
+            for (var i = 0; i <= 3; i++) {
+                if (i < 3) {
+                    choice34 = confirm('Das Schwert ist noch nicht draußen. Inventar: ' + player.inventory[1] + player.inventory[5]);
+                }else if (i === 3) {
+                    choice34 = confirm('Das Schwert ist endlich draußen. Inventar: ' + player.inventory[1] + player.inventory[5]);
+                }
+            }
+        }
+
+        choice35 = confirm('Plötzlich verschwindet die Höhle. Du siehst wie die ganzen Bäume verschwinden und die ganzen Trolle. Plötzlich bemerkst du die Krone auf deinem Kopf. Du bist jetzt der König.')
+        choice35 = prompt('ENDE!! Hat es dir gefallen?');
+
+        body.innerHTML = choice35;
     }
     InTheCave();
 })
